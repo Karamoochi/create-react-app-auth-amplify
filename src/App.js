@@ -13,7 +13,7 @@ class App extends Component {
         <header className="App-header">
           Frush Food powered by Karmoochi
         </header>
-      </div>
+      
 
 <div data-role="page" id="order">
   <div data-role="header" data-theme="b">
@@ -63,6 +63,9 @@ class App extends Component {
 <div data-role="footer"  data-theme="b">
   <h4>Frush Food</h4>
 </div>
+</div>
+
+
 </div>
     );
   }
