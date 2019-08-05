@@ -17,7 +17,9 @@ class App extends Component {
 
 <div data-role="page" id="order">
   <div data-role="header" data-theme="b">
-    <header> </header>
+    <header className="App-header">
+          Frush Food powered by Karmoochi
+        </header>
     <a href="#profile" data-transition="flip" data-icon="gear" data-iconpos="right">Profile</a>
     <h1>My Order</h1>
   </div>
