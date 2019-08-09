@@ -15,7 +15,7 @@ class App extends Component {
         </header>
       
 
-<div data-role="page" id="order">
+{/* <div data-role="page" id="order">
   <div data-role="header" data-theme="b">
     <header className="App-header">
           Frush Food powered by Karmoochi
@@ -66,7 +66,7 @@ class App extends Component {
 <div data-role="footer"  data-theme="b">
   <h4>Frush Food</h4>
 </div>
-</div>
+</div> */}
 
 
 </div>
