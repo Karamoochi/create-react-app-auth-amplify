@@ -5,6 +5,7 @@ import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 import { Form } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
 
 Amplify.configure(aws_exports);
 
@@ -18,7 +19,7 @@ class App extends Component {
   state = {}
 
   handleChange = (e, { value }) => this.setState({ value })
-  
+
   render() {
     const { value } = this.state
     return (
