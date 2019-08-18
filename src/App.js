@@ -4,72 +4,63 @@ import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
+import { Form } from 'semantic-ui-react'
+
 Amplify.configure(aws_exports);
 
+const options = [
+  { key: 'm', text: 'Male', value: 'male' },
+  { key: 'f', text: 'Female', value: 'female' },
+  { key: 'o', text: 'Other', value: 'other' },
+]
+
 class App extends Component {
+  state = {}
+
+  handleChange = (e, { value }) => this.setState({ value })
+  
   render() {
+    const { value } = this.state
     return (
       <div className="App">
+        
         <header className="App-header">
           Frush Food powered by Karmoochi
         </header>
+
+        <Form>
+          <Form.Group widths='equal'>
+            <Form.Input fluid label='First name' placeholder='First name' />
+            <Form.Input fluid label='Last name' placeholder='Last name' />
+            <Form.Select fluid label='Gender' options={options} placeholder='Gender' />
+          </Form.Group>
+          <Form.Group inline>
+            <label>Size</label>
+            <Form.Radio
+              label='Small'
+              value='sm'
+              checked={value === 'sm'}
+              onChange={this.handleChange}
+            />
+            <Form.Radio
+              label='Medium'
+              value='md'
+              checked={value === 'md'}
+              onChange={this.handleChange}
+            />
+            <Form.Radio
+              label='Large'
+              value='lg'
+              checked={value === 'lg'}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.TextArea label='About' placeholder='Tell us more about you...' />
+          <Form.Checkbox label='I agree to the Terms and Conditions' />
+          <Form.Button>Submit</Form.Button>
+        </Form>
       
-
-{/* <div data-role="page" id="order">
-  <div data-role="header" data-theme="b">
-    <header className="App-header">
-          Frush Food powered by Karmoochi
-        </header>
-    <a href="#profile" data-transition="flip" data-icon="gear" data-iconpos="right">Profile</a>
-    <h1>My Order</h1>
-  </div>
-
-<div data-role="content">
-
-<form id='orderForm' method='post' action='confirmation.php'>
-  <fieldset data-role="controlgroup">
-<button class="ui-icon" disabled="true" data-theme="b">Order date</button>
-<select type="range" name="order-date" id="order-date"></select>
-  </fieldset>
-  
-
-
-
-  <button type="submit" id='Purchase' value="Order" data-theme="b">Order</button>
-</form>
-
-</div>
-
-<div data-role="footer" data-theme="b">
-<h4>Frush Food</h4>
-</div>
-
-</div>
-
-
-
-<div data-role="page" id="profile">
-
-<div data-role="header"  data-theme="b">
-  <a href="#order" data-transition="flip" data-icon="delete" data-iconpos="right">Cancel</a>
-  <h1>Profile</h1>
-  <a href="#order" data-transition="flip" data-icon="check" data-iconpos="right">Save</a>
-</div>
-
-<div data-role="content">
-  <p>Profile page to confirm or update your account details</p>
-
-  
-
-</div>
-
-<div data-role="footer"  data-theme="b">
-  <h4>Frush Food</h4>
-</div>
-</div> */}
-
-
-</div>
+      </div>
     );
   }
 }
